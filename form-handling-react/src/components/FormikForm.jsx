@@ -3,30 +3,23 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
 const FormikForm = () => {
-  const initialValues = {
-    username: "",
-    email: "",
-    password: ""
-  };
+  const initialValues = { username: "", email: "", password: "" };
 
   const validationSchema = Yup.object({
     username: Yup.string().required("Username is required"),
-    email: Yup.string().email("Invalid email format").required("Email is required"),
+    email: Yup.string().email("Invalid email").required("Email is required"),
     password: Yup.string().required("Password is required")
   });
 
   const handleSubmit = (values) => {
     console.log("Formik form submitted:", values);
-    // Here you can call a mock API for registration
   };
 
   return (
-    <Formik
-      initialValues={initialValues}
-      validationSchema={validationSchema}
-      onSubmit={handleSubmit}
-    >
+    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
       <Form>
+        <h2>Formik Form</h2>
+
         <div>
           <label>Username:</label>
           <Field type="text" name="username" />
@@ -52,3 +45,4 @@ const FormikForm = () => {
 };
 
 export default FormikForm;
+

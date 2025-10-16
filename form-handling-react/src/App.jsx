@@ -1,14 +1,17 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from "./components/Dashboard";
+import React from "react";
+import RegistrationForm from "./components/RegistrationForm";
+import FormikForm from "./components/FormikForm";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-      </Routes>
-    </Router>
+    <div>
+      <h1>Form Handling in React</h1>
+      <RegistrationForm />
+      <hr />
+      <FormikForm />
+    </div>
   );
 }
 
 export default App;
+
